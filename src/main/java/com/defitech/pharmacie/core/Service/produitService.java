@@ -6,4 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 public class produitService {
     @Autowired
     ProduitRepositoryInterface produitRepository;
+
+
 }
