@@ -5,7 +5,7 @@ import org.springframework.data.annotation.Id;
 
 @Entity
 @Table(name = "produit")
-public class Product {
+public class Produit {
 
     @jakarta.persistence.Id
     @Id
@@ -25,20 +25,15 @@ public class Product {
     @Column(name = "qtestock")
     private Integer quantiteStock;
 
-    @Column(name = "categ")
-    private String categorie;
-
-
-    public Product() {
+    public Produit() {
     }
 
-    public Product(Long idPr, String nom, String description, Double prix, Integer quantiteStock, String categorie) {
+    public Produit(Long idPr, String nom, String description, Double prix, Integer quantiteStock) {
         this.idPr = idPr;
         this.nom = nom;
         this.description = description;
         this.prix = prix;
         this.quantiteStock = quantiteStock;
-        this.categorie = categorie;
     }
 
     // Getters et setters
@@ -82,12 +77,5 @@ public class Product {
         this.quantiteStock = quantiteStock;
     }
 
-    public String getCategorie() {
-        return categorie;
-    }
-
-    public void setCategorie(String categorie) {
-        this.categorie = categorie;
-    }
 
 }

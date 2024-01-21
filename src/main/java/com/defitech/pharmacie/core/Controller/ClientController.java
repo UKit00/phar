@@ -36,9 +36,12 @@ public class ClientController {
         return clientId != null ? ResponseEntity.ok(clientId) : ResponseEntity.notFound().build();
     }
 
+    @GetMapping("/achats")
+    public ResponseEntity<List<ClientAchatDTO>> getClientInfo() {
+        return ResponseEntity.ok(clientService.getClientsInfoEtTotalAchats());
+    }
     @GetMapping("/achats/{date}")
     public ResponseEntity<List<ClientAchatDTO>> getClientAchatsParDate(@PathVariable Date date) {
         return ResponseEntity.ok(clientService.getClientAchatsParDate(date));
     }
-
 }

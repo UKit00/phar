@@ -12,6 +12,6 @@ import java.util.List;
 public interface LignePaieRepositoryInterface extends JpaRepository<LignePaie, Long> {
 
     @Query("SELECT new com.defitech.pharmacie.core.dto.LignePaieDTO(p.nom, lp.quantite, lp.prixUnitaire, lp.totalLigne) " +
-            "FROM LignePaie lp JOIN lp.paiement paie JOIN lp.product p WHERE paie.client.idCli = :clientId")
+            "FROM LignePaie lp JOIN lp.paiement paie JOIN lp.produit p WHERE paie.client.idCli = :clientId")
     List<LignePaieDTO> findDetailsAchatsParClientId(Long clientId);
 }

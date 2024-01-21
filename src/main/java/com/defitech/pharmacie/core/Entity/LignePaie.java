@@ -19,7 +19,7 @@ public class LignePaie {
 
     @ManyToOne
     @JoinColumn(name = "idProduit", nullable = false)
-    private Product product;
+    private Produit produit;
 
     @Column(name = "quantite", nullable = false)
     private Integer quantite;
@@ -54,12 +54,12 @@ public class LignePaie {
         this.paiement = paiement;
     }
 
-    public Product getProduit() {
-        return product;
+    public Produit getProduit() {
+        return produit;
     }
 
-    public void setProduit(Product product) {
-        this.product = product;
+    public void setProduit(Produit produit) {
+        this.produit = produit;
     }
 
     public Integer getQuantite() {
