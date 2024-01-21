@@ -1,7 +1,11 @@
 package com.defitech.pharmacie.core.Repository;
 
-interface ClientRepositoryInterface {
-//    spring.jpa.generate-dll=true FAit la generation automatique
-//    spring.datasource.initialization-mode=always Je ne veut pas generer automatique prend plutot un schema.sql et alimenter
-    //JE veux envoyer dans dev-ISrael
+import com.defitech.pharmacie.core.Entity.Client;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+
+@Repository
+public interface ClientRepositoryInterface extends JpaRepository<Client, Long> {
+    java.util.Optional<Client> findByNom(String nom);
 }
